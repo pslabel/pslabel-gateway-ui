@@ -22,9 +22,9 @@ jobs:
       - name: Build snap
         run: |
           snapcraft --destructive-mode
-          
+
       - name: Upload Snap Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pslabel-gateway-ui-snap
           path: ./*.snap
