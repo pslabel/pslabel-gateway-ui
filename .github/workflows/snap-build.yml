@@ -34,7 +34,7 @@ jobs:
 
       - name: Build ARM64 snap
         run: |
-          snapcraft --destructive-mode --target-arch=arm64
+          snapcraft --destructive-mode --build-for=arm64
         env:
           SNAPCRAFT_BUILD_ENVIRONMENT: host
 
