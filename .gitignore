@@ -192,3 +192,16 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Snap
+# Snap is a package management system for Linux. These are build artifacts and cache files
+# that should not be committed to version control.
+*.snap
+snapcraft.yaml.bak
+snap/.snapcraft/
+parts/
+stage/
+prime/
+*.snap-build/
+.snapcraft/
+squashfs-root/
