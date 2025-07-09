@@ -1,5 +1,9 @@
 name: Build Snap Package for RPI4
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  
 on:
   push:
     branches:
