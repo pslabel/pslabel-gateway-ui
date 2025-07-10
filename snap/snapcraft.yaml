@@ -21,7 +21,6 @@ apps:
     plugs:
       - network
       - network-bind
-      - mosquitto # MQTT Brocker
 
 parts:
   app:
