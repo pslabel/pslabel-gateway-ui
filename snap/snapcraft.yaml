@@ -12,6 +12,7 @@ confinement: strict # use 'strict' once you have the right plugs and slots
 # Specify supported platforms
 platforms:
   arm64:
+  amd64:
 
 apps:
   gateway-ui:
