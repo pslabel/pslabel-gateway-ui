@@ -7,9 +7,18 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: 'Snap Store release channel'
+        required: true
+        default: 'latest/edge'
+        type: choice
+        options:
+          - 'latest/edge'
+          - 'latest/beta'
+          - 'latest/candidate' 
+          - 'latest/stable'
 
 jobs:
   build:
@@ -22,7 +31,7 @@ jobs:
       - build
     uses: canonical/data-platform-workflows/.github/workflows/release_snap.yaml@v32.1.0
     with:
-      channel: latest/edge
+      channel: ${{ github.event.inputs.channel }}
       artifact-prefix: ${{ needs.build.outputs.artifact-prefix }}
     secrets:
       snap-store-token: ${{ secrets.SNAP_STORE_TOKEN }}
